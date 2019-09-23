@@ -29,8 +29,8 @@ a{
     text-decoration:none;
 }
 
-ul{
-    text-decoration:none;
+ul,li{
+    list-style-type:none;
 }
 
 button {
