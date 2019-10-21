@@ -1,8 +1,7 @@
 import React from 'react';
-import api from 'services/api';
 
 import { MdChevronRight, MdAddCircleOutline } from 'react-icons/md';
-import { Container, Content, Meetup } from './styles';
+import { Container, Meetup } from './styles';
 
 export default function Dashboard() {
     return (
