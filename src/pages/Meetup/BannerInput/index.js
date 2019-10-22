@@ -6,7 +6,7 @@ import { MdPhotoCamera } from 'react-icons/md';
 import { Container } from './styles';
 
 export default function BannerInput() {
-    const { defaultValue, registerField } = useField('banner-input');
+    const { defaultValue, registerField } = useField('File');
 
     const [file, setFile] = useState(defaultValue && defaultValue.id);
     const [preview, setPreview] = useState(defaultValue && defaultValue.url);
@@ -16,21 +16,13 @@ export default function BannerInput() {
     useEffect(() => {
         if (ref.current) {
             registerField({
-                name: 'banner_id',
+                name: 'file_id',
                 ref: ref.current,
                 path: 'dataset.file',
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ref]);
-
-    useEffect(
-        () =>
-            setPreview(
-                'http://localhost:3333/files/d38765f890fa9ddff66d76f8b9bc1911.jpg'
-            ),
-        []
-    );
 
     async function handleChange(e) {
         const data = new FormData();
@@ -46,7 +38,7 @@ export default function BannerInput() {
     }
     return (
         <Container>
-            <label htmlFor="banner-input">
+            <label htmlFor="file_id">
                 {(preview && <img src={preview} alt="Selected Banner" />) || (
                     <>
                         <MdPhotoCamera size={70} />
@@ -56,7 +48,7 @@ export default function BannerInput() {
             </label>
             <input
                 type="file"
-                id="banner-input"
+                id="file_id"
                 accept="image/*"
                 data-file={file}
                 onChange={handleChange}

@@ -28,6 +28,11 @@ export const Container = styled.div`
             height: 100px;
             margin-top: 10px;
         }
+
+        span {
+            color: red;
+            padding: 10px 0 0 10px;
+        }
     }
 `;
 

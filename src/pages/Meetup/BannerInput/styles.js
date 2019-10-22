@@ -11,6 +11,7 @@ export const Container = styled.div`
         cursor: pointer;
 
         img {
+            object-fit: cover;
             max-height: 300px;
             width: 100%;
         }

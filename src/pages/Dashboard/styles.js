@@ -26,7 +26,7 @@ export const Container = styled.div`
             background-color: #f94d6a;
             height: 32px;
             width: 164px;
-            font-size: 18px;
+            font-size: 16px;
             &:hover {
                 background-color: ${darken(0.08, '#F94D6A')};
             }
@@ -38,6 +38,32 @@ export const Container = styled.div`
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 15px;
         margin-top: 30px;
+        text-align: center;
+
+        h1,
+        svg {
+            color: #999;
+            justify-self: center;
+        }
+    }
+`;
+
+export const Loading = styled.li`
+    div {
+        margin-bottom: 15px;
+        height: 62px;
+        animation: shine 1.5s ease-in-out infinite;
+        background: linear-gradient(95deg, #000 8%, #383232 18%, #000 33%);
+    }
+
+    @keyframes shine {
+        0% {
+            background-position: -600px 0;
+        }
+
+        100% {
+            background-position: 600px 0;
+        }
     }
 `;
 
@@ -45,7 +71,7 @@ export const Meetup = styled.li`
     padding: 22px;
     background: #000;
     height: 62px;
-
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
